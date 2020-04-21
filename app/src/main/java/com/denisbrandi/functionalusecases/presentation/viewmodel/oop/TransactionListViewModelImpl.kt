@@ -12,7 +12,7 @@ import io.reactivex.rxkotlin.addTo
 import io.reactivex.rxkotlin.subscribeBy
 
 class TransactionListViewModelImpl(
-    private val getTransactionsUseCase: GetTransactionsUseCase
+    private val getTransactionsUseCase: GetTransactionsUseCase //interface
 ) : TransactionListViewModel, ViewModel() {
 
     private val compositeDisposable = CompositeDisposable()
