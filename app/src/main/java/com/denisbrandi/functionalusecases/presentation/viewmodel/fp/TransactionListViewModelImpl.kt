@@ -4,15 +4,15 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.denisbrandi.functionalusecases.domain.model.SimpleResult
 import com.denisbrandi.functionalusecases.domain.model.Transaction
+import com.denisbrandi.functionalusecases.domain.usecase.fp.GetTransactionsUseCase
 import com.denisbrandi.functionalusecases.presentation.viewmodel.TransactionListViewModel
 import com.denisbrandi.functionalusecases.presentation.viewmodel.TransactionListViewModel.State
-import io.reactivex.Single
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
 import io.reactivex.rxkotlin.subscribeBy
 
 class TransactionListViewModelImpl(
-    private val getTransactionsUseCase: () -> Single<SimpleResult<List<Transaction>>>
+    private val getTransactionsUseCase: GetTransactionsUseCase
 ) : TransactionListViewModel, ViewModel() {
 
     private val compositeDisposable = CompositeDisposable()

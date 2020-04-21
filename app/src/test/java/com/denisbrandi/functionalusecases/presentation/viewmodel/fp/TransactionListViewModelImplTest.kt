@@ -2,8 +2,8 @@ package com.denisbrandi.functionalusecases.presentation.viewmodel.fp
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.denisbrandi.functionalusecases.domain.model.Result
-import com.denisbrandi.functionalusecases.domain.model.SimpleResult
 import com.denisbrandi.functionalusecases.domain.model.Transaction
+import com.denisbrandi.functionalusecases.domain.usecase.fp.GetTransactionsUseCase
 import com.denisbrandi.functionalusecases.presentation.viewmodel.TransactionListViewModel.State
 import com.jraska.livedata.TestObserver
 import com.jraska.livedata.test
@@ -20,7 +20,7 @@ class TransactionListViewModelImplTest {
     @get:Rule
     val instantTaskTestRule: TestRule = InstantTaskExecutorRule()
 
-    private val getTransactions: () -> Single<SimpleResult<List<Transaction>>> = mock()
+    private val getTransactions: GetTransactionsUseCase = mock()
     private val sut = TransactionListViewModelImpl(getTransactions)
 
     private lateinit var stateObserver: TestObserver<State>
