@@ -5,7 +5,7 @@ import com.denisbrandi.functionalusecases.domain.model.Transaction
 import com.denisbrandi.functionalusecases.domain.repository.TransactionRepository
 import io.reactivex.Single
 
-fun getTransactions(
+inline fun getTransactions(
     getUserUseCase: GetUserUseCase,
     transactionRepository: TransactionRepository
 ): Single<SimpleResult<List<Transaction>>> {
