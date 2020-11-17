@@ -13,7 +13,7 @@ class FPGetTransactionUseCaseFactory(
     fun makeGetTransactionUseCase(): GetTransactionsUseCase {
         return {
             getTransactions(
-                { userRepository.getUser() },
+                userRepository::getUser,
                 transactionRepository
             )
         }
